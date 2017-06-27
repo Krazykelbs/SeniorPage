@@ -1,2 +1,2 @@
 # SeniorPage
-Rayaan and Kelby 
+Raayan and Kelby 
