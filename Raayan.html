@@ -5,24 +5,25 @@
     <script src="bootstrap-3.3.5-dist copy/js/bootstrap.js"></script>
         <link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel='stylesheet' type="text/css">
       
-    <meta charset="UTF-8" />
+     <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <title>Kelaayan</title>
       
       <style>
       
-     body,html{width:100%;height:100%; background: white;}
-canvas{
-	position: bottom;
-	top:50%;
-	left:50%;
-	transform: translate(-50%,-50%);
-}
+     
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
+.w3-third img:hover{opacity: 1}
       
       </style>
       
   </head>
   
-  <body>
+ <body class="w3-light-grey w3-content" style="max-width:1600px">
+
       
       <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -32,7 +33,7 @@ canvas{
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" target="_blank" href="https://krazykelbs.github.io/SeniorPage/RayaanKelby.html"> Kelaayan </a>
+      <a class="navbar-brand"  href="https://krazykelbs.github.io/SeniorPage/RayaanKelby.html"> Kelaayan </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -50,11 +51,232 @@ canvas{
      
       
       
-  </body>
-    
-    
-    
   
+    
+    
+    
+ 
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <h3 class="w3-padding-64 w3-center"><b>SOME<br>NAME</b></h3>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">PORTFOLIO</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT ME</a> 
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">SOME NAME</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Push down content on small screens --> 
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Photo grid -->
+  <div class="w3-row">
+    <div class="w3-third">
+      <img src="/w3images/natureboy.jpg" style="width:100%" onclick="onClick(this)" alt="A boy surrounded by beautiful nature">
+      <img src="/w3images/girl_mountain.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful scenery this sunset">
+      <img src="/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
+    </div>
+
+    <div class="w3-third">
+      <img src="/w3images/boy.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
+      <img src="/w3images/man_bench.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
+      <img src="/w3images/natureboy.jpg" style="width:100%" onclick="onClick(this)" alt="Nature again.. At its finest!">
+    </div>
+    
+    <div class="w3-third">
+      <img src="/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
+      <img src="/w3images/girl_train.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
+      <img src="/w3images/closegirl.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful day!">
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+    <h4><b>About Me</b></h4>
+    <img src="/w3images/avatar_hat.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+    <div class="w3-content w3-justify" style="max-width:600px">
+      <h4>My Name</h4>
+      <p>Some text about me. I love taking photos of PEOPLE. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p>mail: example@example.com</p>
+      <p>tel: 5353 35531</p>
+      <hr class="w3-opacity">
+      <h4 class="w3-padding-16">Technical Skills</h4>
+      <p class="w3-wide">Photography</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:95%">95%</div>
+      </div>
+      <p class="w3-wide">Web Design</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
+      </div>
+      <p class="w3-wide">Photoshop</p>
+      <div class="w3-white">
+        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+      </div>
+      <p><button class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom">Download Resume</button></p>
+      <hr class="w3-opacity">
+
+      <h4 class="w3-padding-16">How much I charge</h4>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+            <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+            <li class="w3-padding-16">Web Design</li>
+            <li class="w3-padding-16">Photography</li>
+            <li class="w3-padding-16">5GB Storage</li>
+            <li class="w3-padding-16">Mail Support</li>
+            <li class="w3-padding-16">
+              <h2>$ 10</h2>
+              <span class="w3-opacity">per month</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="w3-half">
+          <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+            <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
+            <li class="w3-padding-16">Web Design</li>
+            <li class="w3-padding-16">Photography</li>
+            <li class="w3-padding-16">50GB Storage</li>
+            <li class="w3-padding-16">Endless Support</li>
+            <li class="w3-padding-16">
+              <h2>$ 25</h2>
+              <span class="w3-opacity">per month</span>
+            </li>
+            <li class="w3-light-grey w3-padding-24">
+              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact section -->
+  <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+    <div class="w3-content" style="max-width:600px">
+      <h4 class="w3-center"><b>Contact Me</b></h4>
+      <p>Do you want me to photograph you? Fill out the form and fill me in with the details :) I love meeting new people!</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-section">
+          <label>Name</label>
+          <input class="w3-input w3-border" type="text" name="Name" required>
+        </div>
+        <div class="w3-section">
+          <label>Email</label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <div class="w3-section">
+          <label>Message</label>
+          <input class="w3-input w3-border" type="text" name="Message" required>
+        </div>
+        <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-grey">  
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <h3>INFO</h3>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>      
+      </div>
+    
+      <div class="w3-third">
+        <h3>BLOG POSTS</h3>
+        <ul class="w3-ul">
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Lorem</span><br>
+            <span>Sed mattis nunc</span>
+          </li>
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Ipsum</span><br>
+            <span>Praes tinci sed</span>
+          </li> 
+        </ul>
+      </div>
+
+      <div class="w3-third">
+        <h3>POPULAR TAGS</h3>
+        <p>
+          <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">London</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">DIY</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Family</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Shopping</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Games</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+
+</body>
     
 
         
@@ -62,60 +284,3 @@ canvas{
 
 
 
-<script>
-
-var canvas = document.getElementById("scene");
-var ctx = canvas.getContext("2d");
-var particles = [];
-
-function drawScene() {
-  canvas.width = png.width*3;
-  canvas.height = png.height*3;
-
-  ctx.drawImage(png, 0, 0);
-
-  var data = ctx.getImageData(0, 0, png.width, png.height);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  ctx.fillStyle = "#005daa";
-  
-  for (var y = 0, y2 = data.height; y < y2; y++) {
-    for (var x = 0, x2 = data.width; x < x2; x++) {
-      if (data.data[(y * 4 * data.width) + (x * 4) + 3] > 128) {
-        var particle = {
-          x0: x,
-          y0: y,
-          x1: png.width / 2,
-          y1: png.height / 2,
-          speed: Math.random() * 4 + 2
-        };
-        TweenMax.to(particle, particle.speed, {
-          x1: particle.x0,
-          y1: particle.y0,
-          delay: y / 30,
-          ease: Elastic.easeOut
-        });
-        particles.push(particle);
-      }
-    }
-  }
-
-  requestAnimationFrame(render);
-
-}
-var render = function() {
-  requestAnimationFrame(render);
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (var i = 0, j = particles.length; i < j; i++) {
-    var particle = particles[i];
-    ctx.fillRect(particle.x1 * 3, particle.y1 * 3, 2,2);
-  }
-
-};
-
-var png = new Image();
-png.onload = drawScene;
-png.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhCQkVCQ0ZBQUY4OTExRTVCNzFDQjM4OTVCMkE0MDE1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhCQkVCQ0ZCQUY4OTExRTVCNzFDQjM4OTVCMkE0MDE1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEJCRUJDRjhBRjg5MTFFNUI3MUNCMzg5NUIyQTQwMTUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEJCRUJDRjlBRjg5MTFFNUI3MUNCMzg5NUIyQTQwMTUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6DVytbAAASXUlEQVR42uxd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";
-
-</script>
